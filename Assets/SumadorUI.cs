@@ -6,10 +6,9 @@ using System;
 
 public class SumadorUI : MonoBehaviour
 {
-    public int num1;
-    public int num2;
+    private int num1;
+    private int resultado;
     public TMP_InputField inputNum1;
-    public TMP_InputField inputNum2;
     public TextMeshProUGUI textResultado;
 
     // Start is called before the first frame update
@@ -26,11 +25,16 @@ public class SumadorUI : MonoBehaviour
 
     public void SumarYMostrarResultado()
     {
-        //tomar los valores del input y sumarlos
+        resultado = num1 / 2;
         num1 = int.Parse(inputNum1.text);
-        num2 = int.Parse(inputNum2.text);
+        if (num1 % 2 == 0)
+        {
+            textResultado.text = "El numero es par";
+        } else
+        {
+            textResultado.text = "El numero es impar";
+        }
 
-        textResultado.text = $"{num1 +num2}";
     }
 
 }
